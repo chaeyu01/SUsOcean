@@ -4,7 +4,6 @@ body {
     background: #f5f7fa;
     color: #222;
 }
-
 /* NAV */
 nav {
     position: fixed;
@@ -14,36 +13,29 @@ nav {
     justify-content: center;
     align-items: center;
     padding: 18px 30px;
-
-    background: rgba(20, 20, 20, 0.85); /* 🔥 완전 검정 → 살짝 밝게 */
+    background: rgba(20, 20, 20, 0.85);
     backdrop-filter: blur(10px);
-
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2); /* 🔥 깊이감 */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     z-index: 1000;
 }
-
 .logo {
     position: absolute;
     left: 25px;
 }
-
 .logo img {
     height: 55px;
     object-fit: contain;
     transition: 0.3s;
-
-    filter: brightness(1.2); /* 🔥 로고 밝기 업 */
+    filter: brightness(1.2);
 }
 .logo img:hover {
     transform: scale(1.05);
 }
-
 /* MENU */
 .menu {
     display: flex;
     gap: 35px;
 }
-
 .menu a {
     color: white;
     text-decoration: none;
@@ -53,11 +45,9 @@ nav {
     font-size: 18px;
     opacity: 0.85;
 }
-
 .menu a:hover {
     opacity: 1;
 }
-
 /* underline animation */
 .menu a::after {
     content:"";
@@ -69,11 +59,9 @@ nav {
     background:#00c3ff;
     transition:0.3s;
 }
-
 .menu a:hover::after {
     width:100%;
 }
-
 /* HERO */
 .hero {
     height:100vh;
@@ -82,7 +70,6 @@ nav {
     align-items:center;
     justify-content:center;
 }
-
 .overlay {
     background:rgba(255,255,255,0.7);
     padding:45px;
@@ -90,12 +77,10 @@ nav {
     text-align:center;
     box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
-
 .overlay h1 {
     font-size:42px;
     margin-bottom:10px;
 }
-
 /* SECTION */
 section {
     padding:120px 20px 80px;
@@ -103,7 +88,6 @@ section {
     max-width:1200px;
     margin:auto;
 }
-
 /* CARD GRID */
 .cards {
     display:flex;
@@ -111,10 +95,13 @@ section {
     gap:25px;
     flex-wrap:wrap;
 }
-
+/* a 태그 레이아웃 영향 제거 */
+.cards a {
+    display: contents;
+}
 /* CARD */
 .card {
-    width:500px;
+    width:280px;
     padding:20px;
     border-radius:14px;
     background:white;
@@ -122,18 +109,15 @@ section {
     transition:0.3s;
     overflow:hidden;
 }
-
 /*Wide-card*/
 .wide-card {
-    width: 700px;
+    width: 380px;
     text-align: center;
 }
-
 .card:hover {
     transform:translateY(-8px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
-
 /* IMAGE */
 .card img {
     width:120px;
@@ -143,52 +127,12 @@ section {
     margin: 20px auto 10px;
     display: block;
 }
-
 /* SCROLL ANIMATION */
 .reveal {
     opacity:0;
     transform:translateY(40px);
     transition:1s;
 }
-
 .reveal.active {
     opacity:1;
     transform:translateY(0);
-}
-
-.member-img {
-  width: 150px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-/* ===== 프로필 카드 레이아웃 (Mobility용) ===== */
-.profile-card {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    text-align: left;
-    padding: 30px;
-}
-
-/* 왼쪽 사진 */
-.profile-left img {
-    width: 160px;
-    height: auto;          /* 비율 유지 (안 잘림) */
-    border-radius: 10px;   /* 네모 */
-    object-fit: contain;   /* 절대 안 잘림 */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* 오른쪽 텍스트 */
-.profile-right {
-    flex: 1;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.card {
-    cursor: pointer;
-}
